@@ -1,0 +1,64 @@
+.welcome-header {
+  margin: 116px 0 90px 0;
+  text-align: center;
+  /* .welcome-header__text를 중앙으로 놓기 위해서 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-header__title {
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+
+.welcome-header__text {
+  width: 60%;
+  opacity: 0.7;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;
+}
+
+#login-form input {
+  border: none;
+  padding: 15px 0;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+}
+
+/* 
+  input type이 submit이 아닌 input에는 아래 속성이 적용됨, [] 이 사이에 쓰인 것들은 특성 선택자(attribute selector) 
+  적용 이유 : login 버튼에서 border-bottom에 노란색이 적용됬기 때문 
+  */
+#login-form input:not([type="submit"]) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease-in-out;
+}
+
+#login-form input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#login-form input:focus {
+  /* input 상자에 focus를 둘 경우 노란색으로 바뀜 */
+  border-color: var(--yellow);
+}
+
+#login-form input[type="submit"] {
+  background-color: var(--yellow);
+  cursor: pointer;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+
+#login-form a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 13px;
+}

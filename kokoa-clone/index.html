@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Kokoa Talk Clone</title>
+  </head>
+  <body>
+    <div class="status-bar__container">
+      <div class="status-bar">
+        <div class="status-bar__column">
+          <span>No Service</span>
+          <i class="fas fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+          <span>18:43</span>
+        </div>
+        <div class="status-bar__column">
+          <span>100%</span>
+          <i class="fas fa-battery-full fa-lg"></i>
+          <i class="fas fa-bolt"></i>
+        </div>
+      </div>
+    </div>
+
+    <header class="welcome-header">
+      <h1 class="welcome-header__title">Welcome to KakaoTalk Clone</h1>
+      <p class="welcome-header__text">
+        If you have a Kakao Account, log in with your email or phone number
+      </p>
+    </header>
+
+    <!--
+        form의 2가지 속성
+            1. action : 어떤 페이지로 data를 보낼건지 정할 수 있음
+            2. method : 2가지 방식이 있음
+                2-1 POST : 백엔드 서버에 정보를 전송하는 방식 (여기 프로젝트에서는 쓸 수 없음)
+                2-2 GET
+                    2-2-1 보안에 취약해서, 계정을 GET방식으로 보내면 안됨.
+                    2-2-2 URL에 포함되어도 상관없는 정보들을 GET방식으로 보내는 것임.
+     -->
+    <!-- friends.html action 속성을 통해서 페이지로 이동 -->
+    <form action="friends.html" method="get" id="login-form">
+      <input name="username" type="text" placeholder="Email or phone number" />
+      <input name="password" type="password" placeholder="Password" />
+      <input type="submit" value="Log In" />
+      <a href="#">Find Kakao Account or Password</a>
+    </form>
+
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
