@@ -3,8 +3,58 @@
   display: block;
   background-color: #fafafa;
   padding: 15px 0;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: -15px;
 }
 
 #friends-display-link i {
   color: rgba(0, 0, 0, 0.3);
+}
+
+.friends-screen {
+  padding: 0px var(--horizontal-space);
+}
+
+.friends-screen__channel {
+  margin-top: 25px;
+  border-top: var(--main-border);
+  padding-top: 15px;
+}
+
+.friends-screen__channel-header {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* 애니메이션이 끝나면 맨 처음 상태로 돌아감 */
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden; /* 마우스에 걸리지 않게 빠져버리는 것 */
+  }
+}
+
+/* 새로고침할때마다 카톡 처음 화면 보여주기 */
+#splash-screen {
+  background-color: var(--yellow);
+  position: absolute;
+  height: 100vh; /*화면 높이의 100%*/
+  width: 100vw; /*화면 넓이의 100%*/
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 132px;
+  animation: hideSplashScreen 0.3s ease-in-out forwards;
+  animation-delay: 3s;
+  /* 
+  마지막 속성 값은 keyframe으로 정해지고 애니메이션이 끝나고 유지한다. 
+  opacity:0 이 애니메이션이 끝나고도 유지
+  */
 }
